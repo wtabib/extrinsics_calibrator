@@ -454,6 +454,7 @@ if __name__ == "__main__":
         # tag_in_board_offset = result.x[6:]
         print cam_to_body
         # print tag_in_board_offset
+        print('\nBegin iterating through images to validate the calibration\n')
 
         # Perform validation visualisations
         i = 0
@@ -534,10 +535,13 @@ if __name__ == "__main__":
                 'tag_gt',
                 "board")
 
-            cv2.waitKey(-1)
+            cv2.waitKey(500)
 
             i += 1
         print 'Final error is {0}'.format(error)
+        print ('In an ideal world, we would want just a few pixels of squared reprojection error,')
+        print ('however, the Kinect sensor has issues with K that you can talk to Shaurya about')
+        print ('so ignore for the time being.')
         if raw_input('Save? y/n') in ['y', 'Y']:
             print 'saving to '+extrinsics_save_name
             np.save(extrinsics_save_name, cam_to_body)
