@@ -433,7 +433,7 @@ if __name__ == "__main__":
 
         t_in_board = np.dot(tag_in_board, delta)
 
-        pdb.set_trace()
+        # pdb.set_trace()
         # cam_to_body = np.linalg.inv(SE3.group_from_algebra(
         # se3.algebra_from_vector(result.x[:6])))
 
